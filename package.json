@@ -1,0 +1,21 @@
+{
+	"name": "theme-dev-test-child",
+	"private": true,
+	"license": "GPL-2.0-or-later",
+	"engines": {
+		"node": ">=24"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"lint": "wp-scripts lint-js src tests webpack.config.js eslint.config.cjs",
+		"format": "wp-scripts format src tests webpack.config.js eslint.config.cjs",
+		"test:e2e": "playwright test --config tests/e2e/playwright.config.js"
+	},
+	"devDependencies": {
+		"@playwright/test": "1.64.0",
+		"@saij/wp-app-framework": "file:vendor/saij/wp-app-framework",
+		"@wordpress/e2e-test-utils-playwright": "^3.0.0",
+		"@wordpress/scripts": "^36.1.0"
+	}
+}

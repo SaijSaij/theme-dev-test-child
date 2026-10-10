@@ -1,0 +1,64 @@
+{
+    "name": "saij/theme-dev-test-child",
+    "description": "Test child theme for wp-app-framework: a child theme with code of its own, tested on top of the test theme.",
+    "type": "wordpress-theme",
+    "license": "proprietary",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/saijsaij/wp-app-framework"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/saijsaij/theme-dev-test"
+        }
+    ],
+    "require": {
+        "php": ">=8.5",
+        "saij/wp-app-framework": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saij\\ThemeDevTestChild\\": "src/"
+        }
+    },
+    "scripts": {
+        "build-manifest": "wp-app-framework build",
+        "lint": [
+            "phpstan analyse --no-progress --memory-limit=1G",
+            "php-cs-fixer check --diff"
+        ],
+        "fix": "php-cs-fixer fix",
+        "release": "wp-app-framework release"
+    },
+    "extra": {
+        "strauss": {
+            "target_directory": "vendor-prefixed",
+            "namespace_prefix": "Saij\\ThemeDevTestChild\\Vendor\\",
+            "classmap_prefix": "Saij_ThemeDevTestChild_Vendor_",
+            "include_root_autoload": true,
+            "update_call_sites": [
+                "src",
+                "functions.php"
+            ],
+            "delete_vendor_packages": false
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.5"
+        },
+        "sort-packages": true
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "php-stubs/wordpress-stubs": "^7.1",
+        "phpstan/phpstan": "^2.3",
+        "saij/theme-dev-test": "dev-main",
+        "szepeviktor/phpstan-wordpress": "^2.0"
+    },
+    "scripts-descriptions": {
+        "build-manifest": "Builds and checks the manifest (writes nothing).",
+        "release": "Builds the release ZIP into dist/ (see the README of saij/wp-app-framework)."
+    }
+}

@@ -1,0 +1,18 @@
+# Release for a tag v<version> (= Version in style.css): builds the ZIP, tests it
+# in a plain WordPress on top of a release of its parent theme, the test theme,
+# and attaches it to the GitHub release of the tag.
+# The test child theme follows the framework's main branch; child themes pin a framework tag.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    uses: SaijSaij/wp-app-framework/.github/workflows/consumer-release.yml@main
+    with:
+      with-theme: SaijSaij/theme-dev-test@v0.3.0
