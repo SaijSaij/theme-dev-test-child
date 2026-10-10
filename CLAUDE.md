@@ -1,6 +1,6 @@
 # CLAUDE.md – theme-dev-test-child
 
-Test child theme of [wp-app-framework](https://github.com/saijsaij/wp-app-framework) on top of the test theme [theme-dev-test](https://github.com/saijsaij/theme-dev-test) (slug `theme-dev-test-child`, `Template: theme-dev-test`, blocks `dev-test-child/…`, REST `dev-test-child/v1`, PHP `Saij\ThemeDevTestChild\`). Not a product theme: it exercises a child theme with code of its own, which is a framework instance of its own (`ChildTheme::boot()`). Framework principles and rules: the framework's CLAUDE.md and README; this file covers the child theme.
+Test child theme of [wp-app-framework](https://github.com/saijsaij/wp-app-framework) on top of the test theme [theme-dev-test](https://github.com/saijsaij/theme-dev-test) (slug `theme-dev-test-child`, `Template: theme-dev-test`, blocks `dev-test-child/…`, REST `dev-test-child/v1`, PHP `Saij\ThemeDevTestChild\`). Not a product theme: it exercises a child theme with code of its own, which is a framework instance of its own (`ChildTheme::boot()`). Framework principles and rules: the framework's CLAUDE.md and its [documentation](https://saijsaij.github.io/wp-app-framework/); this file covers the child theme.
 
 <!-- Maintainers: keep this file under 200 lines; the README holds commands in full and the spec table. -->
 

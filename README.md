@@ -26,7 +26,7 @@ git clone https://github.com/saijsaij/theme-dev-test-child.git
 
 ## Release
 
-`composer release` builds `dist/theme-dev-test-child-<version>.zip` with the release pipeline of the framework (see its README), without the parent theme; the framework comes from the lock file, or from the local checkout with `-- --package-source=saij/wp-app-framework=../wp-app-framework`. A tag `v<version>` (= `Version` in `style.css`) runs `.github/workflows/release.yml`: build, release test on top of the release of the parent theme named there (`with-theme`) with all browser tests, then the ZIP is attached to the GitHub release of the tag.
+`composer release` builds `dist/theme-dev-test-child-<version>.zip` with the release pipeline of the framework (see [Release](https://saijsaij.github.io/wp-app-framework/next/build-and-release/release.html) in its documentation), without the parent theme; the framework comes from the lock file, or from the local checkout with `-- --package-source=saij/wp-app-framework=../wp-app-framework`. A tag `v<version>` (= `Version` in `style.css`) runs `.github/workflows/release.yml`: build, release test on top of the release of the parent theme named there (`with-theme`) with all browser tests, then the ZIP is attached to the GitHub release of the tag.
 
 ## Tests
 
