@@ -63,6 +63,7 @@ The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 | `coexistence.spec.js` | Child and parent instance: separate runtimes, JS globals and render routes in one editor, blocks of both in one post, hooks of both | `src/Block/Badge/`, `src/Hook/` |
 | `parent.spec.js` | `#[ThemeApi]`, public template functions of the parent, templates with the same path in parent and child in one request | `src/Parent/`, `src/Twig/` |
 | `twig.spec.js` | Own templates despite parent templates with the same path, overrides of parent and plugin templates, `@theme` of the parent, cache directories of child and parent (release: level for the overrides) | `src/Twig/`, `overrides/` |
+| `styles.spec.js` | Stylesheet built with Tailwind without a prefix (the design of the parent theme): utilities of its templates and of its overrides of parent templates, loaded on the front end and in the editor canvas, not in the editor's main document | `src/styles.css`, `src/Block/Badge/`, `overrides/theme-dev-test/` |
 | `mode.spec.js` | Development and release mode, prefixed classes, init action `wp_app_framework/init/theme-dev-test-child`, paths of `ChildTheme` | `src/Mode/` |
 
 ## Structure
@@ -70,6 +71,6 @@ The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 - `functions.php` loads the autoloader (`vendor-prefixed/` in release builds, `vendor/` in source checkouts) and boots the framework with `ChildTheme::boot()`.
 - `src/` contains the child theme's PHP classes (PSR-4 `Saij\ThemeDevTestChild\`) with their Twig templates and editor scripts; they never override templates of the parent theme.
 - `overrides/{slug}/` overrides templates of the parent theme and of plugins.
-- `build/` (not versioned) is the output of the script build.
+- `build/` (not versioned) is the output of the script and stylesheet build (`src/styles.css`, Tailwind without a prefix, tokens on the variables of the parent theme's `theme.json`).
 
 Caches: `wp-content/cache/theme-dev-test-child/manifest/` (development), `wp-content/cache/theme-dev-test-child/twig/<template version>/` (release).

@@ -1,0 +1,15 @@
+/*
+ * Stylesheet of the child theme, compiled with Tailwind CSS by the framework's webpack helper
+ * (build/styles.css). It shares the design of the parent theme: no prefix, tokens on the
+ * same WordPress variables.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+
+@source "./**/*.twig";
+@source "../overrides/**/*.twig";
+
+@theme inline {
+	--color-primary: var(--wp--preset--color--primary);
+}

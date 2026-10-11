@@ -70,7 +70,7 @@ test.describe( 'Child theme templates', () => {
 		expect(
 			await get( requestUtils, '/dev-test/v1/twig/child-overridable' )
 		).toBe(
-			'<p class="overridable">overridden by theme-dev-test-child</p>\n'
+			'<p class="overridable underline">overridden by theme-dev-test-child</p>\n'
 		);
 		// @theme addresses the parent theme's own template.
 		expect(
