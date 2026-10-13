@@ -42,7 +42,7 @@ docker compose run --rm e2e npm --prefix /workspace/theme-dev-test-child run tes
 `build-manifest` must report
 
 ```
-Manifest OK (child theme theme-dev-test-child): 14 service candidates, 9 services, 1 hooks, 5 routes, 30 template functions, 0 template filters, 1 blocks. Nothing written (no --output).
+Manifest OK (child theme theme-dev-test-child): 16 service candidates, 10 services, 1 hooks, 5 routes, 31 template functions, 0 template filters, 1 blocks. Nothing written (no --output).
 Templates use the public template callables of: theme-dev-test.
 ```
 
