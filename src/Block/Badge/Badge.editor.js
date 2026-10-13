@@ -4,7 +4,7 @@
 import { registerPanel } from '@saij/wp-app-framework';
 import { PanelBody } from '@wordpress/components';
 
-registerPanel( 'dev-test-child/badge', ( { attributes } ) => (
+registerPanel( 'badge', ( { attributes } ) => (
 	<PanelBody title="Badge summary" initialOpen={ false }>
 		<p className="theme-dev-test-child-badge-summary">{ `Size: ${ attributes.size }` }</p>
 	</PanelBody>

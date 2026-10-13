@@ -18,7 +18,7 @@ use SplFileInfo;
 /**
  * Renders the child theme's templates through its renderer.
  */
-#[RestController(Api::NAMESPACE, base: '/twig')]
+#[RestController(Api::VERSION, base: '/twig')]
 final readonly class TwigController
 {
     public function __construct(private TemplateRenderer $renderer) {}

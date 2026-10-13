@@ -32,6 +32,9 @@
         "release": "wp-app-framework release"
     },
     "extra": {
+        "wp-app-framework": {
+            "namespace": "dev-test-child"
+        },
         "strauss": {
             "target_directory": "vendor-prefixed",
             "namespace_prefix": "Saij\\ThemeDevTestChild\\Vendor\\",

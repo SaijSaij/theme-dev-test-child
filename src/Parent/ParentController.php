@@ -15,7 +15,7 @@ use Saij\WpAppFramework\Rest\RestRoute;
 /**
  * Uses the public API of the parent theme (https://github.com/saijsaij/theme-dev-test).
  */
-#[RestController(Api::NAMESPACE, base: '/parent')]
+#[RestController(Api::VERSION, base: '/parent')]
 final readonly class ParentController
 {
     public function __construct(

@@ -15,7 +15,7 @@ use Twig\Environment;
 /**
  * Reports the mode and the paths of the child theme's framework instance.
  */
-#[RestController(Api::NAMESPACE)]
+#[RestController(Api::VERSION)]
 final readonly class ModeController
 {
     public function __construct(private ChildTheme $childTheme) {}
