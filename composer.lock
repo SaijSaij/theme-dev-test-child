@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SaijSaij/wp-app-framework.git",
-                "reference": "c2b0e643336580ce56f5d88ff88254ed06e66995"
+                "reference": "f264b7322d665d15927a11be0c25d3bf0fa12ee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SaijSaij/wp-app-framework/zipball/c2b0e643336580ce56f5d88ff88254ed06e66995",
-                "reference": "c2b0e643336580ce56f5d88ff88254ed06e66995",
+                "url": "https://api.github.com/repos/SaijSaij/wp-app-framework/zipball/f264b7322d665d15927a11be0c25d3bf0fa12ee4",
+                "reference": "f264b7322d665d15927a11be0c25d3bf0fa12ee4",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
                 "source": "https://github.com/SaijSaij/wp-app-framework/tree/main",
                 "issues": "https://github.com/SaijSaij/wp-app-framework/issues"
             },
-            "time": "2026-10-13T13:41:48+00:00"
+            "time": "2026-10-14T06:22:37+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1755,12 +1755,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SaijSaij/theme-dev-test.git",
-                "reference": "b0286145ffa4f806d1a2b092c838739213f83f61"
+                "reference": "8c2a0e5f125547d64d6523748bda7ffd186680cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SaijSaij/theme-dev-test/zipball/b0286145ffa4f806d1a2b092c838739213f83f61",
-                "reference": "b0286145ffa4f806d1a2b092c838739213f83f61",
+                "url": "https://api.github.com/repos/SaijSaij/theme-dev-test/zipball/8c2a0e5f125547d64d6523748bda7ffd186680cc",
+                "reference": "8c2a0e5f125547d64d6523748bda7ffd186680cc",
                 "shasum": ""
             },
             "require": {
@@ -1820,10 +1820,10 @@
             ],
             "description": "Test theme for wp-app-framework: its build and browser tests run against this theme.",
             "support": {
-                "source": "https://github.com/SaijSaij/theme-dev-test/tree/v0.9.0",
+                "source": "https://github.com/SaijSaij/theme-dev-test/tree/v0.10.0",
                 "issues": "https://github.com/SaijSaij/theme-dev-test/issues"
             },
-            "time": "2026-10-13T14:16:14+00:00"
+            "time": "2026-10-14T06:33:58+00:00"
         },
         {
             "name": "sebastian/diff",
