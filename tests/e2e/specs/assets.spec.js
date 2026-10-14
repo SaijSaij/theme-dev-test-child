@@ -9,6 +9,7 @@ const {
 	block,
 	cleanUp,
 	createPost,
+	parentHasAssets,
 	requireChildTheme,
 } = require( '../helpers' );
 
@@ -17,6 +18,10 @@ const CHILD = '/wp-content/themes/theme-dev-test-child/';
 test.describe( 'Assets of the parent theme', () => {
 	test.beforeEach( async ( { requestUtils } ) => {
 		await requireChildTheme( requestUtils );
+		test.skip(
+			! ( await parentHasAssets( requestUtils ) ),
+			'The parent theme release has no static assets (theme-dev-test before 0.13).'
+		);
 	} );
 
 	test.afterEach( async ( { requestUtils } ) => {

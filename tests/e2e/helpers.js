@@ -80,6 +80,20 @@ async function pluginActive( requestUtils ) {
 }
 
 /**
+ * Whether the parent theme has static assets: theme-dev-test registers its block dev-test/asset-showcase since 0.13.
+ * The release workflow of the framework runs this suite on an older theme release.
+ *
+ * @param {Object} requestUtils
+ * @return {Promise<boolean>} The parent theme has assets.
+ */
+async function parentHasAssets( requestUtils ) {
+	const response = await restResponse( requestUtils, {
+		path: '/wp/v2/block-types/dev-test/asset-showcase',
+	} );
+	return response.status === 200;
+}
+
+/**
  * Number of blocks a render request asked for.
  *
  * @param {import('@playwright/test').Request} request
@@ -244,6 +258,7 @@ async function cleanUp( requestUtils ) {
 }
 
 module.exports = {
+	parentHasAssets,
 	block,
 	blockCount,
 	cleanUp,
