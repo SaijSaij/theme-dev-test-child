@@ -42,8 +42,10 @@ docker compose run --rm e2e npm --prefix /workspace/theme-dev-test-child run tes
 `build-manifest` must report
 
 ```
-Manifest OK (child theme theme-dev-test-child): 19 service candidates, 12 services, 1 hooks, 5 routes, 32 template functions, 0 template filters, 1 blocks, 0 CLI commands, 0 cron events, 0 cron tasks, 0 tables, 2 lifecycle methods. Nothing written (no --output).
+Manifest OK (child theme theme-dev-test-child): 23 service candidates, 13 services, 1 hooks, 5 routes, 35 template functions, 0 template filters, 1 blocks, 0 CLI commands, 0 cron events, 0 cron tasks, 0 tables, 2 lifecycle methods. Nothing written (no --output).
+Block markup OK: 1 templates, template parts and patterns checked.
 Templates use the public template callables of: theme-dev-test.
+Assets: 1 static files, 0 image variants.
 ```
 
 The browser tests need this child theme as active theme on top of `theme-dev-test` (`requireChildTheme()` fails otherwise); the test of the plugin override is skipped if the test plugin is not active. Against the release ZIPs:
@@ -59,6 +61,7 @@ The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 
 | Spec | Covers | Code under test |
 |---|---|---|
+| `assets.spec.js` | Assets of the parent theme: the override of its logo in `overrides/theme-dev-test/assets/` (URL versioned by modification time, size of the override), an asset of the child theme's own `assets/` (`@child/…`) in an override of a parent template, assets it does not override | `overrides/theme-dev-test/assets/`, `overrides/theme-dev-test/Block/AssetShowcase/`, `assets/images/` |
 | `block.spec.js` | Block of the child theme: inline editing, re-render through the child theme's render route, `registerPanel` of its instance, stored content, front end | `src/Block/Badge/` |
 | `coexistence.spec.js` | Child and parent instance: separate runtimes, JS globals and render routes in one editor, blocks of both in one post, hooks of both | `src/Block/Badge/`, `src/Hook/` |
 | `tests/lifecycle/run` of [theme-dev-test](https://github.com/saijsaij/theme-dev-test) | `#[OnActivation]` and `#[OnDeactivation]` of the child theme on switches to and from its parent theme | `src/Lifecycle/` |
