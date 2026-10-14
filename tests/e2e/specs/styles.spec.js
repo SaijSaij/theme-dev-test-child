@@ -1,5 +1,5 @@
 /**
- * The child theme's stylesheet src/styles.css, compiled with Tailwind without a
+ * The child theme's stylesheet assets/styles.css, compiled with Tailwind without a
  * prefix (the child theme shares the design of its parent theme), loaded on the
  * front end and in the editor canvas.
  */

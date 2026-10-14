@@ -64,7 +64,7 @@ The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 | `tests/lifecycle/run` of [theme-dev-test](https://github.com/saijsaij/theme-dev-test) | `#[OnActivation]` and `#[OnDeactivation]` of the child theme on switches to and from its parent theme | `src/Lifecycle/` |
 | `parent.spec.js` | `#[ThemeApi]`, public template functions of the parent, templates with the same path in parent and child in one request | `src/Parent/`, `src/Twig/` |
 | `twig.spec.js` | Own templates despite parent templates with the same path, overrides of parent and plugin templates, `@theme` of the parent, cache directories of child and parent (release: level for the overrides) | `src/Twig/`, `overrides/` |
-| `styles.spec.js` | Stylesheet built with Tailwind without a prefix (the design of the parent theme): utilities of its templates and of its overrides of parent templates, loaded on the front end and in the editor canvas, not in the editor's main document | `src/styles.css`, `src/Block/Badge/`, `overrides/theme-dev-test/` |
+| `styles.spec.js` | Stylesheet built with Tailwind without a prefix (the design of the parent theme): utilities of its templates and of its overrides of parent templates, loaded on the front end and in the editor canvas, not in the editor's main document | `assets/styles.css`, `src/Block/Badge/`, `overrides/theme-dev-test/` |
 | `mode.spec.js` | Development and release mode, prefixed classes, init action `wp_app_framework/init/theme-dev-test-child`, paths of `ChildTheme` | `src/Mode/` |
 
 ## Structure
@@ -72,6 +72,6 @@ The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 - `functions.php` loads the autoloader (`vendor-prefixed/` in release builds, `vendor/` in source checkouts) and boots the framework with `ChildTheme::boot()`.
 - `src/` contains the child theme's PHP classes (PSR-4 `Saij\ThemeDevTestChild\`) with their Twig templates and editor scripts; they never override templates of the parent theme.
 - `overrides/{slug}/` overrides templates of the parent theme and of plugins.
-- `build/` (not versioned) is the output of the script and stylesheet build (`src/styles.css`, Tailwind without a prefix, tokens on the variables of the parent theme's `theme.json`).
+- `build/` (not versioned) is the output of the script and stylesheet build (`assets/styles.css`, Tailwind without a prefix, tokens on the variables of the parent theme's `theme.json`).
 
 Caches: `wp-content/cache/theme-dev-test-child/manifest/` (development), `wp-content/cache/theme-dev-test-child/twig/<template version>/` (release).
