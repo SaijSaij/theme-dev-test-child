@@ -42,7 +42,7 @@ docker compose run --rm e2e npm --prefix /workspace/theme-dev-test-child run tes
 `build-manifest` must report
 
 ```
-Manifest OK (child theme theme-dev-test-child): 18 service candidates, 11 services, 1 hooks, 5 routes, 32 template functions, 0 template filters, 1 blocks, 0 CLI commands, 0 cron events, 0 cron tasks, 0 tables. Nothing written (no --output).
+Manifest OK (child theme theme-dev-test-child): 19 service candidates, 12 services, 1 hooks, 5 routes, 32 template functions, 0 template filters, 1 blocks, 0 CLI commands, 0 cron events, 0 cron tasks, 0 tables, 2 lifecycle methods. Nothing written (no --output).
 Templates use the public template callables of: theme-dev-test.
 ```
 
@@ -61,6 +61,7 @@ The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 |---|---|---|
 | `block.spec.js` | Block of the child theme: inline editing, re-render through the child theme's render route, `registerPanel` of its instance, stored content, front end | `src/Block/Badge/` |
 | `coexistence.spec.js` | Child and parent instance: separate runtimes, JS globals and render routes in one editor, blocks of both in one post, hooks of both | `src/Block/Badge/`, `src/Hook/` |
+| `tests/lifecycle/run` of [theme-dev-test](https://github.com/saijsaij/theme-dev-test) | `#[OnActivation]` and `#[OnDeactivation]` of the child theme on switches to and from its parent theme | `src/Lifecycle/` |
 | `parent.spec.js` | `#[ThemeApi]`, public template functions of the parent, templates with the same path in parent and child in one request | `src/Parent/`, `src/Twig/` |
 | `twig.spec.js` | Own templates despite parent templates with the same path, overrides of parent and plugin templates, `@theme` of the parent, cache directories of child and parent (release: level for the overrides) | `src/Twig/`, `overrides/` |
 | `styles.spec.js` | Stylesheet built with Tailwind without a prefix (the design of the parent theme): utilities of its templates and of its overrides of parent templates, loaded on the front end and in the editor canvas, not in the editor's main document | `src/styles.css`, `src/Block/Badge/`, `overrides/theme-dev-test/` |
