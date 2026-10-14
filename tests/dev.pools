@@ -1,0 +1,17 @@
+# Test pools of the child theme in development mode, for bin/run of wp-test-env
+# (https://github.com/saijsaij/wp-test-env), e.g. from its directory:
+#
+#   bin/run ../theme-dev-test-child/tests/dev.pools
+#
+# Every instance runs the checkouts with the framework checkout linked into vendor/:
+# the child theme active on the test theme, with the test plugin.
+prepare theme-dev-test theme-dev-test-child plugin-dev-test
+link saij/wp-app-framework=wp-app-framework
+link saij/plugin-dev-test=plugin-dev-test
+link saij/theme-dev-test=theme-dev-test
+
+pool tdtc
+themes theme-dev-test theme-dev-test-child
+plugins plugin-dev-test
+activate theme-dev-test-child
+e2e theme-dev-test-child

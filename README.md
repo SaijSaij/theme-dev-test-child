@@ -16,7 +16,7 @@ A child theme with code is a framework instance of its own: `functions.php` boot
 
 ## Development
 
-The framework is required from its GitHub repository as `dev-main`, the parent theme as development dependency (`require-dev`, for static analysis; the release ZIP does not contain it). Clone the repositories side by side and use [wp-dev-env](https://github.com/saijsaij/wp-dev-env) with `WP_THEMES=theme-dev-test,theme-dev-test-child`, `WP_ACTIVE_THEME=theme-dev-test-child`, optionally `WP_PLUGINS=plugin-dev-test`, and `WP_PACKAGE_LINKS=saij/wp-app-framework=wp-app-framework,saij/theme-dev-test=theme-dev-test` (plus `saij/plugin-dev-test=plugin-dev-test` with the plugin); its setup runs `composer install`, `npm ci` and `npm run build` and activates the child theme.
+The framework is required from its GitHub repository as `dev-main`, the parent theme as development dependency (`require-dev`, for static analysis; the release ZIP does not contain it). Clone the repositories side by side and develop with [wp-dev-env](https://github.com/saijsaij/wp-dev-env) with `WP_THEMES=theme-dev-test,theme-dev-test-child`, `WP_ACTIVE_THEME=theme-dev-test-child`, optionally `WP_PLUGINS=plugin-dev-test`, and `WP_PACKAGE_LINKS=saij/wp-app-framework=wp-app-framework,saij/theme-dev-test=theme-dev-test` (plus `saij/plugin-dev-test=plugin-dev-test` with the plugin); its setup runs `composer install`, `npm ci` and `npm run build` and activates the child theme.
 
 ```sh
 git clone https://github.com/saijsaij/wp-app-framework.git
@@ -30,13 +30,12 @@ git clone https://github.com/saijsaij/theme-dev-test-child.git
 
 ## Tests
 
-All checks run in wp-dev-env and must pass without errors or warnings.
+All checks run with [wp-test-env](https://github.com/saijsaij/wp-test-env), checked out next to this repository, and must pass without errors or warnings. From this directory:
 
 ```sh
-docker compose run --rm tools composer --working-dir=/workspace/theme-dev-test-child build-manifest
-docker compose run --rm tools composer --working-dir=/workspace/theme-dev-test-child lint   # fix: composer fix
-docker compose run --rm tools npm --prefix /workspace/theme-dev-test-child run lint          # fix: npm run format
-docker compose run --rm e2e npm --prefix /workspace/theme-dev-test-child run test:e2e
+../wp-test-env/bin/tools -w theme-dev-test-child composer build-manifest
+../wp-test-env/bin/tools -w theme-dev-test-child composer lint   # fix: composer fix
+../wp-test-env/bin/tools -w theme-dev-test-child npm run lint    # fix: npm run format
 ```
 
 `build-manifest` must report
@@ -48,16 +47,14 @@ Templates use the public template callables of: theme-dev-test.
 Assets: 1 static files, 0 image variants.
 ```
 
-The browser tests need this child theme as active theme on top of `theme-dev-test` (`requireChildTheme()` fails otherwise); the test of the plugin override is skipped if the test plugin is not active. Against the release ZIPs:
+The browser tests (Playwright, `tests/e2e/`) run in fresh WordPress instances of wp-test-env, described in `tests/dev.pools` (pool `tdtc`: the checkouts, this child theme active on `theme-dev-test`, with the test plugin) and `tests/release.pools` (pool `tdtc-release`: the release ZIP, built first with the framework checkout, on top of the newest ZIP in `theme-dev-test/dist/`). From the wp-test-env directory:
 
 ```sh
-scripts/release-test --theme ../theme-dev-test/dist/theme-dev-test-<version>.zip --child-theme ../theme-dev-test-child/dist/theme-dev-test-child-0.1.0.zip [--plugin ../plugin-dev-test/dist/plugin-dev-test-<version>.zip]
-set -a; . ./.env; set +a
-docker compose run --rm --no-deps -e WP_BASE_URL="$WP_RELEASE_URL" -e E2E_BROWSER_HOST_RULES="MAP $WP_RELEASE_HOST traefik" \
-    -e E2E_TARGET=release -e E2E_OUTPUT_DIR=/results/release e2e npm --prefix /workspace/theme-dev-test-child run test:e2e
+bin/run ../theme-dev-test-child/tests/dev.pools
+bin/run ../theme-dev-test/tests/release.pools ../theme-dev-test-child/tests/release.pools
 ```
 
-The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
+The tests need this child theme as active theme on top of `theme-dev-test` (`requireChildTheme()` fails otherwise); the test of the plugin override is skipped if the test plugin is not active. Each Playwright worker has an instance of its own (`WP_BASE_URLS`, picked per worker in `tests/e2e/playwright.config.js`). The console guard in `tests/e2e/fixtures.js` is the same as in the test theme.
 
 | Spec | Covers | Code under test |
 |---|---|---|

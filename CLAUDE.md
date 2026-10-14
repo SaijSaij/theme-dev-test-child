@@ -14,16 +14,17 @@ Test child theme of [wp-app-framework](https://github.com/saijsaij/wp-app-framew
 
 ## Commands
 
-Run from a [wp-dev-env](https://github.com/saijsaij/wp-dev-env) checkout next to this repository. Every check must pass without errors or warnings.
+Run from this directory, with [wp-test-env](https://github.com/saijsaij/wp-test-env) checked out next to it. Every check must pass without errors or warnings.
 
 ```sh
-docker compose run --rm tools composer --working-dir=/workspace/theme-dev-test-child build-manifest   # output must match the README
-docker compose run --rm tools composer --working-dir=/workspace/theme-dev-test-child lint             # fix: composer fix
-docker compose run --rm tools npm --prefix /workspace/theme-dev-test-child run lint                    # fix: npm run format
-docker compose run --rm e2e npm --prefix /workspace/theme-dev-test-child run test:e2e
+../wp-test-env/bin/tools -w theme-dev-test-child composer build-manifest   # output must match the README
+../wp-test-env/bin/tools -w theme-dev-test-child composer lint             # fix: composer fix
+../wp-test-env/bin/tools -w theme-dev-test-child npm run lint              # fix: npm run format
 ```
 
-Release build (without the parent theme) and release test with `--child-theme`: see "Release" and "Tests" in the README.
+Browser tests run in fresh instances of wp-test-env, from its directory: `bin/run ../theme-dev-test-child/tests/dev.pools` (before a push, with the pool files of the other test projects), `bin/run ../theme-dev-test/tests/release.pools ../theme-dev-test-child/tests/release.pools` (at a release). Every Playwright worker has an instance of its own; the test timeout is 30 s.
+
+Release build (without the parent theme) and release test: see "Release" and "Tests" in the README.
 
 ## Keep in sync
 

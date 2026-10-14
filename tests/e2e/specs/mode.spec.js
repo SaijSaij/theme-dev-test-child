@@ -1,6 +1,6 @@
 /**
- * Development mode in wp-dev-env, release mode with the release ZIP
- * (E2E_TARGET=release, wp-dev-env scripts/release-test --child-theme).
+ * Development mode with the checkout, release mode with the release ZIP
+ * (E2E_TARGET=release, an instance of wp-test-env in release mode with the child theme ZIP).
  */
 const { test, expect } = require( '../fixtures' );
 
