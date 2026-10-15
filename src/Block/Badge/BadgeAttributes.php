@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Saij\ThemeDevTestChild\Block\Badge;
 
-use Saij\WpAppFramework\Block\PlainText;
+use Saij\WpAppFramework\Value\PlainText;
 
 final readonly class BadgeAttributes
 {
