@@ -75,3 +75,7 @@ The tests need this child theme as active theme on top of `theme-dev-test` (`req
 - `build/` (not versioned) is the output of the script and stylesheet build (`assets/styles.css`, Tailwind without a prefix, tokens on the variables of the parent theme's `theme.json`).
 
 Caches: `wp-content/cache/theme-dev-test-child/manifest/` (development), `wp-content/cache/theme-dev-test-child/twig/<template version>/` (release).
+
+## License
+
+[GPL-2.0-or-later](LICENSE), like WordPress.

@@ -2,12 +2,8 @@
     "name": "saij/theme-dev-test-child",
     "description": "Test child theme for wp-app-framework: a child theme with code of its own, tested on top of the test theme.",
     "type": "wordpress-theme",
-    "license": "proprietary",
+    "license": "GPL-2.0-or-later",
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/saijsaij/wp-app-framework"
-        },
         {
             "type": "vcs",
             "url": "https://github.com/saijsaij/theme-dev-test"
