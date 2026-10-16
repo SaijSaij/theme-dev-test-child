@@ -6,7 +6,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/saijsaij/theme-dev-test"
+            "url": "https://github.com/saijsaij/theme-dev-test",
+            "no-api": true
         }
     ],
     "require": {

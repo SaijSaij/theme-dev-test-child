@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6fc01a2be152ad39c6cffb2b674b3e0",
+    "content-hash": "d133df010e6d3b76a0fcec797f2dd23b",
     "packages": [
         {
             "name": "saij/wp-app-framework",
@@ -1749,12 +1749,12 @@
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SaijSaij/theme-dev-test.git",
+                "url": "https://github.com/saijsaij/theme-dev-test",
                 "reference": "6f2f9baa1f2e3fe9d8b2312b1e9d480ebd2e2bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SaijSaij/theme-dev-test/zipball/6f2f9baa1f2e3fe9d8b2312b1e9d480ebd2e2bf5",
+                "url": "https://api.github.com/repos/saijsaij/theme-dev-test/zipball/6f2f9baa1f2e3fe9d8b2312b1e9d480ebd2e2bf5",
                 "reference": "6f2f9baa1f2e3fe9d8b2312b1e9d480ebd2e2bf5",
                 "shasum": ""
             },
