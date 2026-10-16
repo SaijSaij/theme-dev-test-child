@@ -1,16 +1,18 @@
-# Test pools of the child theme's release ZIP on the test theme's, for bin/run of
-# wp-test-env (https://github.com/saijsaij/wp-test-env), e.g. from its directory:
+# Test pools of the child theme's release ZIP on a release of the test theme, for
+# bin/run of wp-test-env (https://github.com/saijsaij/wp-test-env), e.g. from its directory:
 #
 #   bin/run ../theme-dev-test/tests/release.pools ../theme-dev-test-child/tests/release.pools
 #
-# Builds the child theme's release ZIP with the framework checkout; the theme ZIP is
-# the newest in theme-dev-test/dist/ (built by the theme's release pools if given first).
+# Builds the child theme's release ZIP with the framework checkout. The parent theme is
+# the release that with-theme in .github/workflows/release.yml names (downloaded by
+# tests/download-with-theme), as in the release workflow: two framework versions side by side.
 prepare theme-dev-test-child
 link saij/wp-app-framework=wp-app-framework
 link saij/theme-dev-test=theme-dev-test
 tools theme-dev-test-child composer release -- --package-source=saij/wp-app-framework=../wp-app-framework
+tools theme-dev-test-child tests/download-with-theme
 
 pool tdtc-release
-theme-zip theme-dev-test/dist/theme-dev-test-*.zip
+theme-zip theme-dev-test-child/tests/with-theme/theme-dev-test-*.zip
 child-theme-zip theme-dev-test-child/dist/theme-dev-test-child-*.zip
 e2e theme-dev-test-child

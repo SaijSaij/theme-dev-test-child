@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Downloads the theme release that with-theme in .github/workflows/release.yml names
+# into tests/with-theme/, so the local release tests (tests/release.pools) install the
+# same theme as the release workflow, e.g. an older release built with another
+# framework version. Run by tests/release.pools in the tools image of wp-test-env.
+#
+#   tests/download-with-theme
+set -euo pipefail
+
+project="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+spec="$(sed -n 's/^ *with-theme: *//p' "${project}/.github/workflows/release.yml")"
+if [[ ! "${spec}" =~ ^([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)@v([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+    echo "ERROR: with-theme in .github/workflows/release.yml must be <owner>/<repository>@v<version>, got '${spec}'." >&2
+    exit 1
+fi
+owner="${BASH_REMATCH[1]}"
+repository="${BASH_REMATCH[2]}"
+version="${BASH_REMATCH[3]}"
+
+target="${project}/tests/with-theme"
+rm -rf "${target}"
+mkdir -p "${target}"
+# The release workflow attaches the ZIP as <slug>-<version>.zip; the slug is the repository name.
+url="https://github.com/${owner}/${repository}/releases/download/v${version}/${repository}-${version}.zip"
+curl -fsSL -o "${target}/${repository}-${version}.zip" "${url}"
+echo "with-theme: ${owner}/${repository}@v${version} in tests/with-theme/"

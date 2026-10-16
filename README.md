@@ -47,7 +47,7 @@ Templates use the public template callables of: theme-dev-test.
 Assets: 1 static files, 0 image variants.
 ```
 
-The browser tests (Playwright, `tests/e2e/`) run in fresh WordPress instances of wp-test-env, described in `tests/dev.pools` (pool `tdtc`: the checkouts, this child theme active on `theme-dev-test`, with the test plugin) and `tests/release.pools` (pool `tdtc-release`: the release ZIP, built first with the framework checkout, on top of the newest ZIP in `theme-dev-test/dist/`). From the wp-test-env directory:
+The browser tests (Playwright, `tests/e2e/`) run in fresh WordPress instances of wp-test-env, described in `tests/dev.pools` (pool `tdtc`: the checkouts, this child theme active on `theme-dev-test`, with the test plugin) and `tests/release.pools` (pool `tdtc-release`: the release ZIP, built first with the framework checkout, on top of the release of the parent theme that `with-theme` in `.github/workflows/release.yml` names, downloaded by `tests/download-with-theme`, as in the release workflow). From the wp-test-env directory:
 
 ```sh
 bin/run ../theme-dev-test-child/tests/dev.pools

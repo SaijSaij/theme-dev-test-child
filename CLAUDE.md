@@ -30,5 +30,5 @@ Release build (without the parent theme) and release test: see "Release" and "Te
 
 - Expected `build-manifest` output in the README when counts change.
 - The framework is required as `dev-main`, the parent theme as `require-dev`; after changes are pushed there, `composer update` the package.
-- A release tag `v<version>` must equal `Version:` in `style.css`. `with-theme` in `.github/workflows/release.yml` names the parent theme release the child theme is tested on; it must contain the public API and template callables the child theme uses.
+- A release tag `v<version>` must equal `Version:` in `style.css`. `with-theme` in `.github/workflows/release.yml` names the parent theme release the child theme is tested on, in the release workflow and in `tests/release.pools` (`tests/download-with-theme`); it must contain the public API and template callables the child theme uses.
 - Every GitHub release gets short release notes instead of the generated compare link alone: what the child theme tests anew, the framework version it is built with and the parent theme release it is tested on (`with-theme`), and the compare link last. The release workflow creates the release with `--generate-notes`; once it has passed, replace the text with `gh release edit <tag> --notes-file <file>` (a rerun only uploads the ZIP and keeps the text).
