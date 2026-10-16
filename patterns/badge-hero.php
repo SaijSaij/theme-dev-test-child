@@ -11,6 +11,6 @@
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
 <!-- wp:dev-test-child/badge {"label":"New","size":"large"} /-->
-<!-- wp:dev-test/hero {"topline":"From the parent theme"} /-->
+<!-- wp:dev-test/hero {"subline":"From the parent theme"} /-->
 </div>
 <!-- /wp:group -->
