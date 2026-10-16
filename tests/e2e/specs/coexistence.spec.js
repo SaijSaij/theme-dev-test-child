@@ -16,7 +16,7 @@ const {
 } = require( '../helpers' );
 
 const POST = [
-	block( 'dev-test/hero', { subline: 'Parent hero' } ),
+	block( 'dev-test/hero', { headline: 'Parent hero' } ),
 	block( 'dev-test-child/badge', { label: 'Child badge' } ),
 ].join( '\n\n' );
 
@@ -41,7 +41,7 @@ test.describe( 'Child theme and parent theme', () => {
 
 		await expect(
 			editor.canvas.locator(
-				'[data-type="dev-test/hero"] .hero__subline'
+				'[data-type="dev-test/hero"] .hero__headline'
 			)
 		).toHaveText( 'Parent hero' );
 		await expect(
@@ -90,7 +90,7 @@ test.describe( 'Child theme and parent theme', () => {
 		await page.goto( `/?p=${ id }&preview=true` );
 
 		await expect(
-			page.locator( '.wp-block-dev-test-hero .hero__subline' )
+			page.locator( '.wp-block-dev-test-hero .hero__headline' )
 		).toHaveText( 'Parent hero' );
 		await expect(
 			page.locator( '.wp-block-dev-test-child-badge .badge__label' )
