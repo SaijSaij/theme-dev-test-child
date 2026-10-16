@@ -22,7 +22,7 @@ Run from this directory, with [wp-test-env](https://github.com/saijsaij/wp-test-
 ../wp-test-env/bin/tools -w theme-dev-test-child npm run lint              # fix: npm run format
 ```
 
-Browser tests run in fresh instances of wp-test-env, from its directory: `bin/run ../theme-dev-test-child/tests/dev.pools` (before a push, with the pool files of the other test projects), `bin/run ../theme-dev-test/tests/release.pools ../theme-dev-test-child/tests/release.pools` (at a release). Every Playwright worker has an instance of its own; the test timeout is 30 s.
+Browser tests run in fresh instances of wp-test-env, from its directory: `bin/run ../theme-dev-test-child/tests/dev.pools` (before a push, with the pool files of the other test projects), `bin/run ../theme-dev-test/tests/release.pools ../theme-dev-test-child/tests/release.pools` (to reproduce a failed release workflow). Every Playwright worker has an instance of its own; the test timeout is 30 s.
 
 Release build (without the parent theme) and release test: see "Release" and "Tests" in the README.
 
