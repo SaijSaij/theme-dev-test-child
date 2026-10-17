@@ -41,7 +41,7 @@ All checks run with [wp-test-env](https://github.com/saijsaij/wp-test-env), chec
 `build-manifest` must report
 
 ```
-Manifest OK (child theme theme-dev-test-child): 23 service candidates, 13 services, 1 hooks, 5 routes, 35 template functions, 0 template filters, 1 blocks, 0 CLI commands, 0 cron events, 0 cron tasks, 0 tables, 2 lifecycle methods. Nothing written (no --output).
+Manifest OK (child theme theme-dev-test-child): 25 service candidates, 14 services, 1 hooks, 5 routes, 41 template functions, 0 template filters, 1 blocks, 0 CLI commands, 0 cron events, 0 cron tasks, 0 tables, 2 lifecycle methods. Nothing written (no --output).
 Block markup OK: 1 templates, template parts and patterns checked.
 Templates use the public template callables of: theme-dev-test.
 Assets: 1 static files, 0 image variants.
