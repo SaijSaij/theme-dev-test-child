@@ -15,4 +15,4 @@ jobs:
   release:
     uses: SaijSaij/wp-app-framework/.github/workflows/consumer-release.yml@main
     with:
-      with-theme: SaijSaij/theme-dev-test@v0.17.0
+      with-theme: SaijSaij/theme-dev-test@v0.17.1
