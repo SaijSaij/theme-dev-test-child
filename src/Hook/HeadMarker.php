@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Hook;
+namespace WebCodingCat\ThemeDevTestChild\Hook;
 
-use Saij\WpAppFramework\ChildTheme;
-use Saij\WpAppFramework\Hook\Hook;
+use WebCodingCat\WpAppFramework\ChildTheme;
+use WebCodingCat\WpAppFramework\Hook\Hook;
 
 /**
  * Action of the child theme: prints a meta tag the browser tests look for.

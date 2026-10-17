@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Twig;
+namespace WebCodingCat\ThemeDevTestChild\Twig;
 
 use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use Saij\ThemeDevTestChild\Rest\Api;
-use Saij\WpAppFramework\Rest\HttpMethod;
-use Saij\WpAppFramework\Rest\Permission\PublicAccess;
-use Saij\WpAppFramework\Rest\RestController;
-use Saij\WpAppFramework\Rest\RestRoute;
-use Saij\WpAppFramework\Twig\TemplateRenderer;
 use SplFileInfo;
+use WebCodingCat\ThemeDevTestChild\Rest\Api;
+use WebCodingCat\WpAppFramework\Rest\HttpMethod;
+use WebCodingCat\WpAppFramework\Rest\Permission\PublicAccess;
+use WebCodingCat\WpAppFramework\Rest\RestController;
+use WebCodingCat\WpAppFramework\Rest\RestRoute;
+use WebCodingCat\WpAppFramework\Twig\TemplateRenderer;
 
 /**
  * Renders the child theme's templates through its renderer.

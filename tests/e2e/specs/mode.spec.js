@@ -29,7 +29,7 @@ test.describe( 'Mode', () => {
 			expect( response.body ).toEqual( {
 				release: IS_RELEASE,
 				devCache: ! IS_RELEASE,
-				frameworkClass: `${ VENDOR_PREFIX }Saij\\WpAppFramework\\ChildTheme`,
+				frameworkClass: `${ VENDOR_PREFIX }WebCodingCat\\WpAppFramework\\ChildTheme`,
 				twigClass: `${ VENDOR_PREFIX }Twig\\Environment`,
 				// wp_app_framework/init/theme-dev-test-child fired once.
 				init: 1,

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Mode;
+namespace WebCodingCat\ThemeDevTestChild\Mode;
 
-use Saij\ThemeDevTestChild\Rest\Api;
-use Saij\WpAppFramework\ChildTheme;
-use Saij\WpAppFramework\Rest\HttpMethod;
-use Saij\WpAppFramework\Rest\Permission\PublicAccess;
-use Saij\WpAppFramework\Rest\RestController;
-use Saij\WpAppFramework\Rest\RestRoute;
 use Twig\Environment;
+use WebCodingCat\ThemeDevTestChild\Rest\Api;
+use WebCodingCat\WpAppFramework\ChildTheme;
+use WebCodingCat\WpAppFramework\Rest\HttpMethod;
+use WebCodingCat\WpAppFramework\Rest\Permission\PublicAccess;
+use WebCodingCat\WpAppFramework\Rest\RestController;
+use WebCodingCat\WpAppFramework\Rest\RestRoute;
 
 /**
  * Reports the mode and the paths of the child theme's framework instance.

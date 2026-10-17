@@ -1,5 +1,5 @@
 {
-    "name": "saij/theme-dev-test-child",
+    "name": "webcodingcat/theme-dev-test-child",
     "description": "Test child theme for wp-app-framework: a child theme with code of its own, tested on top of the test theme.",
     "type": "wordpress-theme",
     "license": "GPL-2.0-or-later",
@@ -12,11 +12,11 @@
     ],
     "require": {
         "php": ">=8.5",
-        "saij/wp-app-framework": "dev-main"
+        "webcodingcat/wp-app-framework": "dev-main"
     },
     "autoload": {
         "psr-4": {
-            "Saij\\ThemeDevTestChild\\": "src/"
+            "WebCodingCat\\ThemeDevTestChild\\": "src/"
         }
     },
     "scripts": {
@@ -34,8 +34,8 @@
         },
         "strauss": {
             "target_directory": "vendor-prefixed",
-            "namespace_prefix": "Saij\\ThemeDevTestChild\\Vendor\\",
-            "classmap_prefix": "Saij_ThemeDevTestChild_Vendor_",
+            "namespace_prefix": "WebCodingCat\\ThemeDevTestChild\\Vendor\\",
+            "classmap_prefix": "WebCodingCat_ThemeDevTestChild_Vendor_",
             "include_root_autoload": true,
             "update_call_sites": [
                 "src",
@@ -54,7 +54,7 @@
         "friendsofphp/php-cs-fixer": "^3.95",
         "php-stubs/wordpress-stubs": "^7.1",
         "phpstan/phpstan": "^2.3",
-        "saij/theme-dev-test": "dev-main",
+        "webcodingcat/theme-dev-test": "dev-main",
         "szepeviktor/phpstan-wordpress": "^2.0"
     },
     "scripts-descriptions": {

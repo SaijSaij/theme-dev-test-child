@@ -1,7 +1,7 @@
 /**
  * Editor extension of the badge block: a panel of the child theme's own framework instance.
  */
-import { registerPanel } from '@saij/wp-app-framework';
+import { registerPanel } from '@webcodingcat/wp-app-framework';
 import { PanelBody } from '@wordpress/components';
 
 registerPanel( 'badge', ( { attributes } ) => (

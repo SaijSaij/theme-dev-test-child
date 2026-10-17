@@ -6,9 +6,9 @@
 # Every instance runs the checkouts with the framework checkout linked into vendor/:
 # the child theme active on the test theme, with the test plugin.
 prepare theme-dev-test theme-dev-test-child plugin-dev-test
-link saij/wp-app-framework=wp-app-framework
-link saij/plugin-dev-test=plugin-dev-test
-link saij/theme-dev-test=theme-dev-test
+link webcodingcat/wp-app-framework=wp-app-framework
+link webcodingcat/plugin-dev-test=plugin-dev-test
+link webcodingcat/theme-dev-test=theme-dev-test
 
 pool tdtc
 themes theme-dev-test theme-dev-test-child

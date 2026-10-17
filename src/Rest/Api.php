@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Rest;
+namespace WebCodingCat\ThemeDevTestChild\Rest;
 
-use Saij\WpAppFramework\DependencyInjection\NoService;
+use WebCodingCat\WpAppFramework\DependencyInjection\NoService;
 
 #[NoService]
 final class Api

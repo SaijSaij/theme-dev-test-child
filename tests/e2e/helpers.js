@@ -12,7 +12,9 @@ const PARENT_THEME = 'theme-dev-test';
 const IS_RELEASE = process.env.E2E_TARGET === 'release';
 
 /** Namespace prefix of the dependencies in a release (extra.strauss.namespace_prefix in composer.json). */
-const VENDOR_PREFIX = IS_RELEASE ? 'Saij\\ThemeDevTestChild\\Vendor\\' : '';
+const VENDOR_PREFIX = IS_RELEASE
+	? 'WebCodingCat\\ThemeDevTestChild\\Vendor\\'
+	: '';
 
 /** Posts created by the tests; cleanUp() removes exactly these. */
 const createdPosts = [];

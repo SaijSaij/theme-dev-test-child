@@ -7,9 +7,9 @@
 # the release that with-theme in .github/workflows/release.yml names (downloaded by
 # tests/download-with-theme), as in the release workflow: two framework versions side by side.
 prepare theme-dev-test-child
-link saij/wp-app-framework=wp-app-framework
-link saij/theme-dev-test=theme-dev-test
-tools theme-dev-test-child composer release -- --package-source=saij/wp-app-framework=../wp-app-framework
+link webcodingcat/wp-app-framework=wp-app-framework
+link webcodingcat/theme-dev-test=theme-dev-test
+tools theme-dev-test-child composer release -- --package-source=webcodingcat/wp-app-framework=../wp-app-framework
 tools theme-dev-test-child tests/download-with-theme
 
 pool tdtc-release

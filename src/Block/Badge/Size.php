@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Block\Badge;
+namespace WebCodingCat\ThemeDevTestChild\Block\Badge;
 
-use Saij\WpAppFramework\Value\Labeled;
+use WebCodingCat\WpAppFramework\Value\Labeled;
 
 enum Size: string implements Labeled
 {

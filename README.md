@@ -3,20 +3,20 @@
 Test child theme of [wp-app-framework](https://github.com/webcodingcat/wp-app-framework). It is not a product theme: its block, hook, routes, templates and overrides exist to exercise the framework in a child theme with code of its own, on top of its parent, the test theme [theme-dev-test](https://github.com/webcodingcat/theme-dev-test).
 
 - Theme slug (directory name): `theme-dev-test-child`, parent theme (`Template:` in `style.css`): `theme-dev-test`
-- Block namespace: `dev-test-child/`, REST namespace: `dev-test-child/v1`, PHP namespace `Saij\ThemeDevTestChild\`
+- Block namespace: `dev-test-child/`, REST namespace: `dev-test-child/v1`, PHP namespace `WebCodingCat\ThemeDevTestChild\`
 - Requires WordPress 7.1 and PHP 8.5
 
 A child theme with code is a framework instance of its own: `functions.php` boots it with `ChildTheme::boot()`, its release ships its own prefixed framework, and it reaches the parent theme only through the parent's public interface.
 
 ## Use of the parent theme and of the test plugin
 
-- **Public API of the parent:** `Saij\ThemeDevTest\Api\DevTestApi`, injected with `#[ThemeApi] ?DevTestApi $parent = null` (`src/Parent/`).
+- **Public API of the parent:** `WebCodingCat\ThemeDevTest\Api\DevTestApi`, injected with `#[ThemeApi] ?DevTestApi $parent = null` (`src/Parent/`).
 - **Public template functions of the parent:** `theme_dev_test_badge(label)` and `theme_dev_test_partial(name)` in `src/Twig/ParentCalls.twig`, without declaring the parent.
 - **Overrides:** `overrides/theme-dev-test/Twig/ChildOverridable.twig` overrides a template of the parent theme, `overrides/plugin-dev-test/Twig/Overridable.twig` one of the test plugin [plugin-dev-test](https://github.com/webcodingcat/plugin-dev-test), before the parent theme's override.
 
 ## Development
 
-The framework is required from its GitHub repository as `dev-main`, the parent theme as development dependency (`require-dev`, for static analysis; the release ZIP does not contain it). Clone the repositories side by side and develop with [wp-dev-env](https://github.com/webcodingcat/wp-dev-env) with `WP_THEMES=theme-dev-test,theme-dev-test-child`, `WP_ACTIVE_THEME=theme-dev-test-child`, optionally `WP_PLUGINS=plugin-dev-test`, and `WP_PACKAGE_LINKS=saij/wp-app-framework=wp-app-framework,saij/theme-dev-test=theme-dev-test` (plus `saij/plugin-dev-test=plugin-dev-test` with the plugin); its setup runs `composer install`, `npm ci` and `npm run build` and activates the child theme.
+The framework is required from its GitHub repository as `dev-main`, the parent theme as development dependency (`require-dev`, for static analysis; the release ZIP does not contain it). Clone the repositories side by side and develop with [wp-dev-env](https://github.com/webcodingcat/wp-dev-env) with `WP_THEMES=theme-dev-test,theme-dev-test-child`, `WP_ACTIVE_THEME=theme-dev-test-child`, optionally `WP_PLUGINS=plugin-dev-test`, and `WP_PACKAGE_LINKS=webcodingcat/wp-app-framework=wp-app-framework,webcodingcat/theme-dev-test=theme-dev-test` (plus `webcodingcat/plugin-dev-test=plugin-dev-test` with the plugin); its setup runs `composer install`, `npm ci` and `npm run build` and activates the child theme.
 
 ```sh
 git clone https://github.com/webcodingcat/wp-app-framework.git
@@ -26,7 +26,7 @@ git clone https://github.com/webcodingcat/theme-dev-test-child.git
 
 ## Release
 
-`composer release` builds `dist/theme-dev-test-child-<version>.zip` with the release pipeline of the framework (see [Release](https://webcodingcat.github.io/wp-app-framework/next/build-and-release/release.html) in its documentation), without the parent theme; the framework comes from the lock file, or from the local checkout with `-- --package-source=saij/wp-app-framework=../wp-app-framework`. A tag `v<version>` (= `Version` in `style.css`) runs `.github/workflows/release.yml`: build, release test on top of the release of the parent theme named there (`with-theme`) with all browser tests, then the ZIP is attached to the GitHub release of the tag.
+`composer release` builds `dist/theme-dev-test-child-<version>.zip` with the release pipeline of the framework (see [Release](https://webcodingcat.github.io/wp-app-framework/next/build-and-release/release.html) in its documentation), without the parent theme; the framework comes from the lock file, or from the local checkout with `-- --package-source=webcodingcat/wp-app-framework=../wp-app-framework`. A tag `v<version>` (= `Version` in `style.css`) runs `.github/workflows/release.yml`: build, release test on top of the release of the parent theme named there (`with-theme`) with all browser tests, then the ZIP is attached to the GitHub release of the tag.
 
 ## Tests
 
@@ -70,7 +70,7 @@ The tests need this child theme as active theme on top of `theme-dev-test` (`req
 ## Structure
 
 - `functions.php` loads the autoloader (`vendor-prefixed/` in release builds, `vendor/` in source checkouts) and boots the framework with `ChildTheme::boot()`.
-- `src/` contains the child theme's PHP classes (PSR-4 `Saij\ThemeDevTestChild\`) with their Twig templates and editor scripts; they never override templates of the parent theme.
+- `src/` contains the child theme's PHP classes (PSR-4 `WebCodingCat\ThemeDevTestChild\`) with their Twig templates and editor scripts; they never override templates of the parent theme.
 - `overrides/{slug}/` overrides templates of the parent theme and of plugins.
 - `build/` (not versioned) is the output of the script and stylesheet build (`assets/styles.css`, Tailwind without a prefix, tokens on the variables of the parent theme's `theme.json`).
 

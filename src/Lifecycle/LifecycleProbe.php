@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Lifecycle;
+namespace WebCodingCat\ThemeDevTestChild\Lifecycle;
 
-use Saij\WpAppFramework\Lifecycle\OnActivation;
-use Saij\WpAppFramework\Lifecycle\OnDeactivation;
+use WebCodingCat\WpAppFramework\Lifecycle\OnActivation;
+use WebCodingCat\WpAppFramework\Lifecycle\OnDeactivation;
 
 /**
  * Counts activations and deactivations of the child theme in the option theme_dev_test_child_lifecycle_probe, which

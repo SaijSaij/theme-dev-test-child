@@ -4,19 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a52645b70a6998b686fb38dfe9ec201",
+    "content-hash": "1664f8ed477adfa048a3bb52ec431636",
     "packages": [
         {
-            "name": "saij/wp-app-framework",
+            "name": "webcodingcat/wp-app-framework",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SaijSaij/wp-app-framework.git",
+                "url": "https://github.com/webcodingcat/wp-app-framework.git",
                 "reference": "91a1074825b338d0f5d76be2d9b4785cb0ba1a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SaijSaij/wp-app-framework/zipball/91a1074825b338d0f5d76be2d9b4785cb0ba1a48",
+                "url": "https://api.github.com/repos/webcodingcat/wp-app-framework/zipball/91a1074825b338d0f5d76be2d9b4785cb0ba1a48",
                 "reference": "91a1074825b338d0f5d76be2d9b4785cb0ba1a48",
                 "shasum": ""
             },
@@ -39,7 +39,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Saij\\WpAppFramework\\": "src/"
+                    "WebCodingCat\\WpAppFramework\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -47,7 +47,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Framework for standalone full site editing themes for WordPress.",
-            "homepage": "https://saijsaij.github.io/wp-app-framework/",
+            "homepage": "https://webcodingcat.github.io/wp-app-framework/",
             "keywords": [
                 "block-theme",
                 "full-site-editing",
@@ -57,9 +57,9 @@
                 "wordpress"
             ],
             "support": {
-                "docs": "https://saijsaij.github.io/wp-app-framework/",
-                "issues": "https://github.com/saijsaij/wp-app-framework/issues",
-                "source": "https://github.com/saijsaij/wp-app-framework"
+                "docs": "https://webcodingcat.github.io/wp-app-framework/",
+                "issues": "https://github.com/webcodingcat/wp-app-framework/issues",
+                "source": "https://github.com/webcodingcat/wp-app-framework"
             },
             "time": "2026-10-17T11:48:17+00:00"
         },
@@ -1745,7 +1745,7 @@
             "time": "2024-06-11T12:45:25+00:00"
         },
         {
-            "name": "saij/theme-dev-test",
+            "name": "webcodingcat/theme-dev-test",
             "version": "dev-main",
             "source": {
                 "type": "git",
@@ -1760,13 +1760,13 @@
             },
             "require": {
                 "php": ">=8.5",
-                "saij/wp-app-framework": "dev-main"
+                "webcodingcat/wp-app-framework": "dev-main"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.95",
                 "php-stubs/wordpress-stubs": "^7.1",
                 "phpstan/phpstan": "^2.3",
-                "saij/plugin-dev-test": "dev-main",
+                "webcodingcat/plugin-dev-test": "dev-main",
                 "szepeviktor/phpstan-wordpress": "^2.0"
             },
             "default-branch": true,
@@ -1780,8 +1780,8 @@
                 },
                 "strauss": {
                     "target_directory": "vendor-prefixed",
-                    "namespace_prefix": "Saij\\ThemeDevTest\\Vendor\\",
-                    "classmap_prefix": "Saij_ThemeDevTest_Vendor_",
+                    "namespace_prefix": "WebCodingCat\\ThemeDevTest\\Vendor\\",
+                    "classmap_prefix": "WebCodingCat_ThemeDevTest_Vendor_",
                     "include_root_autoload": true,
                     "update_call_sites": [
                         "src",
@@ -1792,7 +1792,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Saij\\ThemeDevTest\\": "src/"
+                    "WebCodingCat\\ThemeDevTest\\": "src/"
                 }
             },
             "scripts": {
@@ -1815,8 +1815,8 @@
             ],
             "description": "Test theme for wp-app-framework: its build and browser tests run against this theme.",
             "support": {
-                "source": "https://github.com/SaijSaij/theme-dev-test/tree/main",
-                "issues": "https://github.com/SaijSaij/theme-dev-test/issues"
+                "source": "https://github.com/webcodingcat/theme-dev-test/tree/main",
+                "issues": "https://github.com/webcodingcat/theme-dev-test/issues"
             },
             "time": "2026-10-14T14:13:09+00:00"
         },
@@ -3241,8 +3241,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "saij/theme-dev-test": 20,
-        "saij/wp-app-framework": 20
+        "webcodingcat/theme-dev-test": 20,
+        "webcodingcat/wp-app-framework": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

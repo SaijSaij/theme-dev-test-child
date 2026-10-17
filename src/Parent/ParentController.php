@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Saij\ThemeDevTestChild\Parent;
+namespace WebCodingCat\ThemeDevTestChild\Parent;
 
-use Saij\ThemeDevTest\Api\DevTestApi;
-use Saij\ThemeDevTestChild\Rest\Api;
-use Saij\WpAppFramework\Api\ThemeApi;
-use Saij\WpAppFramework\Rest\HttpMethod;
-use Saij\WpAppFramework\Rest\Permission\PublicAccess;
-use Saij\WpAppFramework\Rest\RestController;
-use Saij\WpAppFramework\Rest\RestRoute;
+use WebCodingCat\ThemeDevTest\Api\DevTestApi;
+use WebCodingCat\ThemeDevTestChild\Rest\Api;
+use WebCodingCat\WpAppFramework\Api\ThemeApi;
+use WebCodingCat\WpAppFramework\Rest\HttpMethod;
+use WebCodingCat\WpAppFramework\Rest\Permission\PublicAccess;
+use WebCodingCat\WpAppFramework\Rest\RestController;
+use WebCodingCat\WpAppFramework\Rest\RestRoute;
 
 /**
  * Uses the public API of the parent theme (https://github.com/webcodingcat/theme-dev-test).
