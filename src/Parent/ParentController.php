@@ -13,7 +13,7 @@ use Saij\WpAppFramework\Rest\RestController;
 use Saij\WpAppFramework\Rest\RestRoute;
 
 /**
- * Uses the public API of the parent theme (https://github.com/saijsaij/theme-dev-test).
+ * Uses the public API of the parent theme (https://github.com/webcodingcat/theme-dev-test).
  */
 #[RestController(Api::VERSION, base: '/parent')]
 final readonly class ParentController

@@ -4,7 +4,7 @@ const { request: apiRequest } = require( '@playwright/test' );
 const RENDER_ROUTE = '/wp-app-framework/v1/theme-dev-test-child/render';
 const THEME_RENDER_ROUTE = '/wp-app-framework/v1/theme-dev-test/render';
 
-/** The child theme and its parent, the test theme (https://github.com/saijsaij/theme-dev-test). */
+/** The child theme and its parent, the test theme (https://github.com/webcodingcat/theme-dev-test). */
 const CHILD_THEME = 'theme-dev-test-child';
 const PARENT_THEME = 'theme-dev-test';
 
@@ -59,7 +59,7 @@ async function requireChildTheme( requestUtils ) {
 }
 
 /**
- * Whether the test plugin (https://github.com/saijsaij/plugin-dev-test) is installed and active.
+ * Whether the test plugin (https://github.com/webcodingcat/plugin-dev-test) is installed and active.
  *
  * @param {Object} requestUtils
  * @return {Promise<boolean>} Active.

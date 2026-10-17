@@ -1,7 +1,7 @@
 /**
  * Browser tests of the child theme, on top of its parent, the test theme
- * (https://github.com/saijsaij/theme-dev-test). Run them with wp-test-env
- * (https://github.com/saijsaij/wp-test-env), which starts the WordPress
+ * (https://github.com/webcodingcat/theme-dev-test). Run them with wp-test-env
+ * (https://github.com/webcodingcat/wp-test-env), which starts the WordPress
  * instances and runs Playwright with the credentials and a writable results
  * directory, e.g. on two instances:
  *

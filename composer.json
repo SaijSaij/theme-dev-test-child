@@ -6,7 +6,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/saijsaij/theme-dev-test",
+            "url": "https://github.com/webcodingcat/theme-dev-test",
             "no-api": true
         }
     ],
@@ -59,6 +59,6 @@
     },
     "scripts-descriptions": {
         "build-manifest": "Builds and checks the manifest (writes nothing).",
-        "release": "Builds the release ZIP into dist/ (see https://saijsaij.github.io/wp-app-framework/next/build-and-release/release.html)."
+        "release": "Builds the release ZIP into dist/ (see https://webcodingcat.github.io/wp-app-framework/next/build-and-release/release.html)."
     }
 }
